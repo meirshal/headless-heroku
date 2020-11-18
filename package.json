@@ -1,0 +1,43 @@
+{
+  "name": "user-simulator",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "yarn start:dev",
+    "start:heroku": "node dist/index.js",
+    "start:dev": "nodemon --watch 'src/**/*.ts' --ignore 'src/**/*.spec.ts' --exec 'ts-node' src/index.ts",
+    "build": "tsc",
+    "test": "rm -rf dist && jest",
+    "test:watch": "jest --watch",
+    "start:mongo": "docker run -p 27017:27017 -v $PWD/mongo_data:/data/db mongo",
+    "gen:types": "graphql-codegen --config codegen.yml"
+  },
+  "dependencies": {
+    "bluebird": "^3.7.2",
+    "body-parser": "^1.19.0",
+    "commander": "^6.2.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "lodash": "^4.17.15",
+    "moment": "^2.25.3",
+    "moment-timezone": "^0.5.31",
+    "node-fetch": "^2.6.0",
+    "puppeteer": "^5.4.1",
+    "reflect-metadata": "^0.1.13",
+    "@babel/preset-typescript": "^7.9.0",
+    "@types/bluebird": "^3.5.31",
+    "@types/faker": "^4.1.11",
+    "@types/jest": "^25.2.1",
+    "@types/lodash": "^4.14.150",
+    "@typescript-eslint/eslint-plugin": "^2.31.0",
+    "@typescript-eslint/parser": "^2.31.0",
+    "core-js": "^3.6.5",
+    "nodemon": "^2.0.3",
+    "ts-node": "^8.10.1",
+    "typescript": "^3.8.3"
+  },
+  "devDependencies": {
+    "eslint": "^7.0.0"
+  }
+}
