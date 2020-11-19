@@ -1,0 +1,5 @@
+{
+  "name": "Headless Browser",
+  "description": "This is a web server running puppeteer as a headless browser.",
+  "stack": "container"
+}
